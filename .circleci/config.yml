@@ -45,6 +45,7 @@ commands:
 jobs:
   bootstrap:
     <<: *node
+    machine: true
     steps:
       - checkout
       - run: |
