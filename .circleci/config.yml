@@ -55,8 +55,8 @@ jobs:
   test:
     <<: *node
     steps:
-      run_command:
-        command: test
+      - run_command:
+          command: test
 
 workflows:
   version: 2
