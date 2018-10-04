@@ -9,7 +9,7 @@ aliases:
       - image: circleci/node:10
       - image: verdaccio/verdaccio
         environment:
-          VERDACCIO_PATH: /home/circleci/project/verdaccio
+          VERDACCIO_PATH: /home/circleci/project
         command:
           - "-v $VERDACCIO_PATH/conf:/verdaccio/conf"
           - "-v $VERDACCIO_PATH/storage:/verdaccio/storage"
