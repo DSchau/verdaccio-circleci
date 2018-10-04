@@ -8,7 +8,7 @@ aliases:
     docker:
       - image: circleci/node:10
       - image: verdaccio/verdaccio
-        env:
+        environment:
           V_PATH: /home/circleci/verdaccio
 
   restore_node_modules: &restore_node_modules
