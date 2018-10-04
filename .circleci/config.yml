@@ -9,9 +9,9 @@ aliases:
       - image: circleci/node:10
       - image: verdaccio/verdaccio
         command:
-          - "-v /home/circleci/conf:/verdaccio/conf"
-          - "-v /home/circleci/storage:/verdaccio/storage"
-          - "-v /home/circleci/plugins:/verdaccio/plugins"
+          - "-v /home/circleci:/verdaccio/conf"
+          - "-v /home/circleci:/verdaccio/storage"
+          - "-v /home/circleci:/verdaccio/plugins"
 
   restore_node_modules: &restore_node_modules
     restore_cache:
