@@ -1,6 +1,6 @@
 {
   "name": "verdaccio-circleci",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "main": "index.js",
   "repository": "git@github.com:DSchau/verdaccio-circleci.git",
   "author": "Dustin Schau <dustinschau@gmail.com>",
