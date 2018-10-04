@@ -4,6 +4,11 @@ aliases:
     docker:
       - image: circleci/node:10
 
+  node_verdaccio: &node_verdaccio
+    docker:
+      - image: circleci/node:10
+      - image: verdaccio/verdaccio
+
   restore_node_modules: &restore_node_modules
     restore_cache:
       name: Restore node_modules cache
@@ -44,8 +49,7 @@ commands:
 
 jobs:
   bootstrap:
-    <<: *node
-    machine: true
+    <<: *node_verdaccio
     steps:
       - checkout
       - run: |
