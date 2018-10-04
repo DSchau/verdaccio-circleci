@@ -37,12 +37,15 @@ commands:
     parameters:
       command:
         type: string
+      arguments:
+        type: string
+        default: ""
     steps:
       - checkout
       - <<: *restore_node_modules
       - <<: *install_node_modules
       - <<: *attach_to_bootstrap
-      - run: yarn "<< parameters.command >>"
+      - run: yarn << parameters.command >> << parameters.arguments >>
 
 jobs:
   bootstrap:
@@ -62,7 +65,8 @@ jobs:
     <<: *node
     steps:
       - run_command:
-          command: "publish --version 0.0.0 --registry http://localhost:4873"
+          command: "publish"
+          arguments: "--version 0.0.0 --registry http://localhost:4873"
   test:
     <<: *node
     steps:
