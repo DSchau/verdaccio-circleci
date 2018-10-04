@@ -52,9 +52,6 @@ jobs:
     <<: *node_verdaccio
     steps:
       - checkout
-      - run: |
-          docker login -u $DOCKER_USER -p $DOCKER_PASS
-          docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio 
       - <<: *restore_node_modules
       - <<: *install_node_modules
       - <<: *persist_node_modules
