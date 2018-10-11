@@ -64,7 +64,8 @@ jobs:
   publish:
     <<: *node_verdaccio
     steps:
-      - run: "echo 'registry \"http://localhost:4873\"\nemail admin@gatsbyjs.org\nusername gatsbyjs' > ~/.yarnrc"
+      - run: "echo '//localhost:4873/:_authToken=\"+JtL4QeYjHDeZaKCFZK46g==\"' > ~/.npmrc"
+      - run: "echo 'registry "http://localhost:4873"' > ~/.yarnrc"
       - run: yarn login
       - run_command:
           command: "publish"
