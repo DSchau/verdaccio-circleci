@@ -65,6 +65,7 @@ jobs:
     <<: *node_verdaccio
     steps:
       - run: "echo 'registry \"http://localhost:4873\"\nemail admin@gatsbyjs.org\nusername gatsbyjs' > ~/.yarnrc"
+      - run: yarn login
       - run_command:
           command: "publish"
           arguments: "--patch"
