@@ -64,9 +64,10 @@ jobs:
   publish:
     <<: *node_verdaccio
     steps:
+      - run: echo "registry \"http://localhost:4873\"\nemail admin@gatsbyjs.org\nusername gatsbyjs" > ~/.yarnrc
       - run_command:
           command: "publish"
-          arguments: "--version 0.0.0 --registry http://localhost:4873"
+          arguments: "--patch"
       - run: yarn info verdaccio-circleci
 
   test:
