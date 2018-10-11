@@ -53,6 +53,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
+      - run: echo $(docker ps)
       - <<: *restore_node_modules
       - <<: *install_node_modules
       - <<: *persist_node_modules
