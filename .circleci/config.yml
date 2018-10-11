@@ -57,8 +57,6 @@ jobs:
       - <<: *install_node_modules
       - <<: *persist_node_modules
       - run: yarn bootstrap
-      - run: docker build -t dschau/test:$CIRCLE_BRANCH .
-      - run: docker push dschau/test:$CIRCLE_BRANCH .
       - persist_to_workspace:
           root: .
           paths:
