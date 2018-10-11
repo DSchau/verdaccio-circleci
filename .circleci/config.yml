@@ -52,10 +52,13 @@ jobs:
     <<: *node_verdaccio
     steps:
       - checkout
+      - setup_remote_docker
       - <<: *restore_node_modules
       - <<: *install_node_modules
       - <<: *persist_node_modules
       - run: yarn bootstrap
+      - run: docker build -t dschau/test:$CIRCLE_BRANCH .
+      - run: docker push dschau/test:$CIRCLE_BRANCH .
       - persist_to_workspace:
           root: .
           paths:
